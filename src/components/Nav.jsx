@@ -85,7 +85,7 @@ export const Nav = () => {
         </Button>
        
       </Link>
-      {/* <a href="./resume\Abid_resume (3).pdf" download> resume</a> */}
+     
       <Box>
         <IconButton
           float="right"

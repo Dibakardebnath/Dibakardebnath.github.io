@@ -39,7 +39,7 @@ export const Intro = () => {
                         _hover={{ bg: "gray.900", color: "black" }}
                         bg={"#03c8d7"} >
                         Download Resume</Button></Text>
-                        {/* <a href="./resume\Abid_resume (3).pdf" download> resume</a> */}
+                       
                         </Box>
             </Box>
             <Box className='intro_right' data-aos="fade-down"  data-aos-duration="1000">

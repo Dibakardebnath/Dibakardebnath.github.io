@@ -1,19 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.e375ec6e.css",
-    "main.js": "/static/js/main.f7deb1a8.js",
+    "main.js": "/static/js/main.9c299230.js",
     "static/js/787.128fc6e9.chunk.js": "/static/js/787.128fc6e9.chunk.js",
-    "static/media/boat.png": "/static/media/boat.cb0978ce0b49e4121784.png",
-    "static/media/flipkart.png": "/static/media/flipkart.cb0978ce0b49e4121784.png",
-    "static/media/funiture_project.png": "/static/media/funiture_project.cb0978ce0b49e4121784.png",
-    "static/media/youtube.png": "/static/media/youtube.b026502554754e71825f.png",
+    "static/media/Myntra.png": "/static/media/Myntra.0f34c764956f4297ff84.png",
+    "static/media/Alcazar.png": "/static/media/Alcazar.cb0978ce0b49e4121784.png",
     "index.html": "/index.html",
     "main.e375ec6e.css.map": "/static/css/main.e375ec6e.css.map",
-    "main.f7deb1a8.js.map": "/static/js/main.f7deb1a8.js.map",
+    "main.9c299230.js.map": "/static/js/main.9c299230.js.map",
     "787.128fc6e9.chunk.js.map": "/static/js/787.128fc6e9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e375ec6e.css",
-    "static/js/main.f7deb1a8.js"
+    "static/js/main.9c299230.js"
   ]
 }

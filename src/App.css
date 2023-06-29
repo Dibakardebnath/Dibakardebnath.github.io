@@ -1,7 +1,14 @@
 .App {
   text-align: center;
+ 
 }
-
+*{
+  background-color: #20232f;
+}
+#app-container{
+  background-color: #20232f;
+  color: white;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

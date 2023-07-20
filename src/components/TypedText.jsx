@@ -18,6 +18,6 @@ import Typed from 'typed.js';
       };
     }, []);
   
-    return <span style={{color:'#03c8d7'}}  className="role" ref={typedElementRef} />;
+    return <span style={{color:'orangered'}}  className="role" ref={typedElementRef} />;
   };
   

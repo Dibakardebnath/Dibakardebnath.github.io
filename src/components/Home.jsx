@@ -11,6 +11,10 @@ import "./Home.css"
 import { Stats } from './Stats'
 
 
+
+
+
+
 export const Home = () => {
     return (
         <Box id="home">

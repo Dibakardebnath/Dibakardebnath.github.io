@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Box, Heading, Link, IconButton, useDisclosure, VStack, Spacer, Button, Divider,} from "@chakra-ui/react";
 import { Link as ScrollLink } from "react-scroll";
 import { DownloadIcon, HamburgerIcon } from "@chakra-ui/icons";
+import './Home.css'
 
 export const Nav = () => {
   const { getDisclosureProps, getButtonProps } = useDisclosure();
@@ -16,57 +17,58 @@ export const Nav = () => {
     );
   };
   return (
-    <Container id="nav-menu" h="80px" marginBottom="50px" position="sticky" top="0" zIndex="100" padding="20px"
-    maxW="100%"display="flex"justifyContent="space-between"bg="#20232f"color="white"shadow="base"
+    <Container id="nav-menu" h="80px" position="sticky" top="0" zIndex="100" padding="20px"
+    maxW="100%"display="flex"justifyContent="space-between"bg="transparent"color="black"shadow="base"
     >
       <Box  >
         <Heading marginTop={0} fontFamily="cursive" size="lg" cursor="pointer" >
-          Dibakar Debnath
+         Dibakar <span style={{color:"#e4512d"}}> Debnath
+          </span>
         </Heading>
       </Box>
       <Spacer />
-      <Box display={["none", "none", "none", "flex", "flex"]} w="50%" justifyContent="space-evenly"
+      <Box className="nav" display={["none", "none", "none", "flex", "flex"]} w="50%" justifyContent="space-evenly"
       >
     
             <Link  className="nav-link home"  as={ScrollLink} to={"home"} spy={true}smooth={true}offset={-80}duration={400}p="5px 10px"m="auto"textAlign={"center"}
               cursor="pointer"
               w="100px"
-              _hover={{ bg: "gray.900", color:"#03c8d7", borderRadius: "10px" }}
+              _hover={{ bg: "gray.200", color:"#e4512d", borderRadius: "10px" }}
             >
              Home
             </Link>
             <Link  className="nav-link about"  as={ScrollLink} to={"about"}spy={true}smooth={true}offset={-80}duration={400}p="5px 10px"m="auto"textAlign={"center"}
               cursor="pointer"
               w="100px"
-              _hover={{ bg: "gray.900", color:"#03c8d7", borderRadius: "10px" }}
+              _hover={{ bg: "gray.200", color:"#e4512d", borderRadius: "10px" }}
             >
              About
             </Link>
             <Link    className="nav-link skills" as={ScrollLink} to={"skills"}spy={true}smooth={true}offset={-80}duration={400}p="5px 10px"m="auto"textAlign={"center"}
               cursor="pointer"
               w="100px"
-              _hover={{ bg: "gray.900", color:"#03c8d7", borderRadius: "10px" }}
+              _hover={{ bg: "gray.200", color:"#e4512d", borderRadius: "10px" }}
             >
              Skills
             </Link>
             <Link    className="nav-link projects" as={ScrollLink} to={"projects"}spy={true}smooth={true}offset={-80}duration={400}p="5px 10px"m="auto"textAlign={"center"}
               cursor="pointer"
               w="100px"
-              _hover={{ bg: "gray.900", color:"#03c8d7", borderRadius: "10px" }}
+              _hover={{ bg: "gray.200", color:"#e4512d", borderRadius: "10px" }}
             >
              Projects
             </Link>
             <Link  className="statistics"  as={ScrollLink} to={"statistics"}spy={true}smooth={true}offset={-80}duration={400}p="5px 10px"m="auto"textAlign={"center"}
               cursor="pointer"
               w="100px"
-              _hover={{ bg: "gray.900", color:"#03c8d7", borderRadius: "10px" }}
+              _hover={{ bg: "gray.200", color:"#e4512d", borderRadius: "10px" }}
             >
              Statistics
             </Link>
             <Link   className="nav-link contact" as={ScrollLink} to={"contact"} spy={true}smooth={true}offset={-80}duration={400}p="5px 10px"m="auto"textAlign={"center"}
               cursor="pointer"
               w="100px"
-              _hover={{ bg: "gray.900", color:"#03c8d7", borderRadius: "10px" }}
+              _hover={{ bg: "gray.200", color:"#e4512d", borderRadius: "10px" }}
             >
              Contacts
             </Link>
@@ -75,8 +77,8 @@ export const Nav = () => {
       <Link  className="nav-link resume">
         <Button
         id="resume-button-1"
-          display={["flex"]} borderRadius=".5rem" size={["md"]} margin="auto" as={Link} border="1px solid #03c8d7" padding={5} color="white" alignItems="center"
-          target="_blank" bg="brand_secondary"  _hover={{bg: "gray.900", color:"#03c8d7" }} href="https://drive.google.com/file/d/1TdTTYswIbyJU6tiZQ7ZNGWECGg6Fb5Ki/view?usp=sharing" download={true}
+          display={["none", "none", "none", "flex", "flex"]} borderRadius=".8rem" size={["sm", "md"]} margin="auto" as={Link} border="1px solid #e4512d"
+          target="_blank" bg="brand_secondary" color="#f8572f" _hover={{bg: "gray.200", color:"#e4512d" }} href="./resume\Dibakar_resume (3).pdf" download={true}
           onClick={handleClick}
          
         >
@@ -85,11 +87,12 @@ export const Nav = () => {
         </Button>
        
       </Link>
-     
+      {/* <a href="./resume\Abid_resume (3).pdf" download> resume</a> */}
       <Box>
         <IconButton
           float="right"
           variant="outline"
+          size={['sm','md','md']}
           colorScheme="black"
           {...buttonProps}
           display={["flex", "flex", "flex", "none", "none"]}
@@ -219,7 +222,7 @@ export const Nav = () => {
             as={Link}
             target="_blank"
             variant="outline"
-            color="brand"
+            color="#f8572f"
             border="1px"
             borderRadius="10px"
             href="/Abid_Resume.pdf"
@@ -235,4 +238,5 @@ export const Nav = () => {
     </Container>
   )
 }
+
 

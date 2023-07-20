@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.b53d0261.css",
-    "main.js": "/static/js/main.90c56ff0.js",
+    "main.js": "/static/js/main.0030988f.js",
     "static/media/Dibakar.png": "/static/media/Dibakar.0277fbe85474b911aab5.png",
     "static/media/Myntra.png": "/static/media/Myntra.0f34c764956f4297ff84.png",
     "static/media/Alcazar.png": "/static/media/Alcazar.cb0978ce0b49e4121784.png",
     "index.html": "/index.html",
     "main.b53d0261.css.map": "/static/css/main.b53d0261.css.map",
-    "main.90c56ff0.js.map": "/static/js/main.90c56ff0.js.map"
+    "main.0030988f.js.map": "/static/js/main.0030988f.js.map"
   },
   "entrypoints": [
     "static/css/main.b53d0261.css",
-    "static/js/main.90c56ff0.js"
+    "static/js/main.0030988f.js"
   ]
 }

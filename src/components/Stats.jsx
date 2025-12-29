@@ -1,13 +1,15 @@
 import { Box, Container, Heading } from '@chakra-ui/react';
 import React from 'react';
+import { useDarkMode } from '../context/DarkModeContext';
 import GitHubCalendarComponent from './GitHubCalendarComponent';
 
 export const Stats = () => {
+    const { isDarkMode } = useDarkMode();
     return (
         <Box id="statistics" >
-            <Heading data-aos="fade-down" textAlign={'center'} fontSize={["2xl","3xl","4xl","4xl"]} >My Git  <span  style={{ color: "orangered" }}>Calender</span></Heading>
+            <Heading data-aos="fade-down" textAlign={'center'} fontSize={["2xl","3xl","4xl","4xl"]} color={isDarkMode ? "#f1f5f9" : "#0f172a"}>My Git  <span  style={{ color: "#7c3aed" }}>Calender</span></Heading>
             <GitHubCalendarComponent />
-            <Heading textAlign={'center'} fontSize={["2xl","3xl","4xl","4xl"]}> My github  <span  style={{ color: "orangered" }}>stats</span></Heading>
+            <Heading textAlign={'center'} fontSize={["2xl","3xl","4xl","4xl"]} color={isDarkMode ? "#f1f5f9" : "#0f172a"}> My github  <span  style={{ color: "#7c3aed" }}>stats</span></Heading>
             <Box className='stat-container'>
                 <Box className='statone' data-aos="fade-up" >
                     <img id="github-stats-card"

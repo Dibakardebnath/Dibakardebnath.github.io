@@ -14,7 +14,7 @@
     "aos": "^2.3.4",
     "axios": "^1.4.0",
     "framer-motion": "^10.12.17",
-    "github-calendar": "^2.3.2",
+    "github-calendar": "^2.3.2",    
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",

@@ -12,7 +12,7 @@ export const Project = () => {
 
       <Text data-aos="fade-right" data-aos-duration="1000"
         fontSize={["3xl", "4xl", "4xl", "4xl"]} mb={"30px"}
-         fontWeight={"700"} color={"black"} borderRadius={"10px"} border={"4px solid orangered"}
+         fontWeight={"700"} color={"#0f172a"} borderRadius={"10px"} border={"4px solid #7c3aed"}
         className='project-title'
         textAlign={"center"}  w={'max-content'} margin={"40px auto"} padding={"0px 40px"}>Projects</Text>
 

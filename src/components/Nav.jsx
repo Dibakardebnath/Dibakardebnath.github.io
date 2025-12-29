@@ -1,242 +1,269 @@
-import React from "react";
-import { Container, Box, Heading, Link, IconButton, useDisclosure, VStack, Spacer, Button, Divider,} from "@chakra-ui/react";
+import React, { useState, useEffect } from "react";
+import {
+  Container,
+  Box,
+  Heading,
+  Link,
+  IconButton,
+  useDisclosure,
+  VStack,
+  Spacer,
+  Button,
+  HStack,
+  Drawer,
+  DrawerBody,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+} from "@chakra-ui/react";
 import { Link as ScrollLink } from "react-scroll";
-import { DownloadIcon, HamburgerIcon } from "@chakra-ui/icons";
-import './Home.css'
+import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { useDarkMode } from "../context/DarkModeContext";
+import "./Nav.css";
 
 export const Nav = () => {
-  const { getDisclosureProps, getButtonProps } = useDisclosure();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isDarkMode, toggleDarkMode } = useDarkMode();
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  const buttonProps = getButtonProps();
-  const disclosureProps = getDisclosureProps();
- 
- const handleClick = () => {
-    return window.open(
-      "https://drive.google.com/file/d/1TdTTYswIbyJU6tiZQ7ZNGWECGg6Fb5Ki/view?usp=sharing",
+  // Handle scroll effect for header
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleResumeDownload = () => {
+    window.open(
+      "https://drive.google.com/uc?id=1_iC4GevxSiYGFBwJ9xwnlVBFH2L8wLxW&export=download",
       "_blank"
     );
   };
+
+  const navLinks = [
+    { label: "Home", to: "home" },
+    { label: "About", to: "about" },
+    { label: "Skills", to: "skills" },
+    { label: "Experience", to: "experience" },
+    { label: "Projects", to: "projects" },
+    { label: "Contact", to: "contact" },
+  ];
+
   return (
-    <Container id="nav-menu" h="80px" position="sticky" top="0" zIndex="100" padding="20px"
-    maxW="100%"display="flex"justifyContent="space-between"bg="transparent"color="black"shadow="base"
-    >
-      <Box  >
-        <Heading marginTop={0} fontFamily="cursive" size="lg" cursor="pointer" >
-         Dibakar <span style={{color:"#e4512d"}}> Debnath
-          </span>
-        </Heading>
-      </Box>
-      <Spacer />
-      <Box className="nav" display={["none", "none", "none", "flex", "flex"]} w="50%" justifyContent="space-evenly"
+    <>
+      <Box
+        as="nav"
+        id="nav-menu"
+        className={`nav-header ${isScrolled ? "scrolled" : ""} ${
+          isDarkMode ? "dark" : ""
+        }`}
+        position="sticky"
+        top="0"
+        zIndex="100"
+        backdropFilter="blur(8px)"
+        bg={isDarkMode ? "rgba(15, 23, 42, 0.8)" : "rgba(255, 255, 255, 0.8)"}
+        borderBottom={`1px solid ${
+          isDarkMode ? "rgba(148, 163, 184, 0.1)" : "rgba(0, 0, 0, 0.08)"
+        }`}
+        boxShadow={isScrolled ? "0 4px 12px rgba(0, 0, 0, 0.08)" : "none"}
+        transition="all 0.3s ease"
       >
-    
-            <Link  className="nav-link home"  as={ScrollLink} to={"home"} spy={true}smooth={true}offset={-80}duration={400}p="5px 10px"m="auto"textAlign={"center"}
-              cursor="pointer"
-              w="100px"
-              _hover={{ bg: "gray.200", color:"#e4512d", borderRadius: "10px" }}
-            >
-             Home
-            </Link>
-            <Link  className="nav-link about"  as={ScrollLink} to={"about"}spy={true}smooth={true}offset={-80}duration={400}p="5px 10px"m="auto"textAlign={"center"}
-              cursor="pointer"
-              w="100px"
-              _hover={{ bg: "gray.200", color:"#e4512d", borderRadius: "10px" }}
-            >
-             About
-            </Link>
-            <Link    className="nav-link skills" as={ScrollLink} to={"skills"}spy={true}smooth={true}offset={-80}duration={400}p="5px 10px"m="auto"textAlign={"center"}
-              cursor="pointer"
-              w="100px"
-              _hover={{ bg: "gray.200", color:"#e4512d", borderRadius: "10px" }}
-            >
-             Skills
-            </Link>
-            <Link    className="nav-link projects" as={ScrollLink} to={"projects"}spy={true}smooth={true}offset={-80}duration={400}p="5px 10px"m="auto"textAlign={"center"}
-              cursor="pointer"
-              w="100px"
-              _hover={{ bg: "gray.200", color:"#e4512d", borderRadius: "10px" }}
-            >
-             Projects
-            </Link>
-            <Link  className="statistics"  as={ScrollLink} to={"statistics"}spy={true}smooth={true}offset={-80}duration={400}p="5px 10px"m="auto"textAlign={"center"}
-              cursor="pointer"
-              w="100px"
-              _hover={{ bg: "gray.200", color:"#e4512d", borderRadius: "10px" }}
-            >
-             Statistics
-            </Link>
-            <Link   className="nav-link contact" as={ScrollLink} to={"contact"} spy={true}smooth={true}offset={-80}duration={400}p="5px 10px"m="auto"textAlign={"center"}
-              cursor="pointer"
-              w="100px"
-              _hover={{ bg: "gray.200", color:"#e4512d", borderRadius: "10px" }}
-            >
-             Contacts
-            </Link>
-       
-      </Box>
-      <Link  className="nav-link resume">
-        <Button
-        id="resume-button-1"
-          display={["none", "none", "none", "flex", "flex"]} borderRadius=".8rem" size={["sm", "md"]} margin="auto" as={Link} border="1px solid #e4512d"
-          target="_blank" bg="brand_secondary" color="#f8572f" _hover={{bg: "gray.200", color:"#e4512d" }} href="./resume\Dibakar_resume (3).pdf" download={true}
-          onClick={handleClick}
-         
+        <Container
+          maxW="container.2xl"
+          display="flex"
+          alignItems="center"
+          justifyContent="space-between"
+          h="80px"
+          px={[4, 6, 8]}
         >
-          <DownloadIcon marginRight="5px" />
-          Resume
-        </Button>
-       
-      </Link>
-      {/* <a href="./resume\Abid_resume (3).pdf" download> resume</a> */}
-      <Box>
-        <IconButton
-          float="right"
-          variant="outline"
-          size={['sm','md','md']}
-          colorScheme="black"
-          {...buttonProps}
-          display={["flex", "flex", "flex", "none", "none"]}
-        >
-          <HamburgerIcon />
-        </IconButton>
-        <VStack
-          marginTop="40px"
-          {...disclosureProps}
-          bg="brand_secondary"
-          padding="5px"
-          borderRadius="5px"
-          display={["flex", "flex", "flex", "none", "none"]}
-        >
-         
-              <Link
-               className="nav-link home"
-                as={ScrollLink}
-              
-                {...buttonProps}
-                width="100%"
-                color="brand"
-                borderRadius="5px"
-                to={"home"}
-                spy={true}
-                smooth={true}
-                offset={-80}
-                duration={400}
-                cursor="pointer"
-              >
-                Home
-                <Divider />
-              </Link>
-              
-              <Link
-                as={ScrollLink}
-                className="nav-link about"
-                {...buttonProps}
-                width="100%"
-                color="brand"
-                borderRadius="5px"
-                to={"about"}
-                spy={true}
-                smooth={true}
-                offset={-80}
-                duration={400}
-                cursor="pointer"
-              >
-                About
-                <Divider />
-              </Link>
-              
-              <Link
-                as={ScrollLink}
-                className="nav-link skills"
-                {...buttonProps}
-                width="100%"
-                color="brand"
-                borderRadius="5px"
-                to={"skills"}
-                spy={true}
-                smooth={true}
-                offset={-80}
-                duration={400}
-                cursor="pointer"
-              >
-                Skills
-                <Divider />
-              </Link>
-              
-              <Link
-                as={ScrollLink}
-                className="nav-link projects"
-                {...buttonProps}
-                width="100%"
-                color="brand"
-                borderRadius="5px"
-                to={"projects"}
-                spy={true}
-                smooth={true}
-                offset={-80}
-                duration={400}
-                cursor="pointer"
-              >
-                Projects
-                <Divider />
-              </Link>
-              
-              <Link
-                as={ScrollLink}
-                className="statistics" 
-                {...buttonProps}
-                width="100%"
-                color="brand"
-                borderRadius="5px"
-                to={"statistics"}
-                spy={true}
-                smooth={true}
-                offset={-80}
-                duration={400}
-                cursor="pointer"
-              >
-                Statistics
-                <Divider />
-              </Link>
-              
-              <Link
-                as={ScrollLink}
-              className="nav-link contact"
-                {...buttonProps}
-                width="100%"
-                color="brand"
-                borderRadius="5px"
-                to={"contact"}
-                spy={true}
-                smooth={true}
-                offset={-80}
-                duration={400}
-                cursor="pointer"
-              >
-                Contact
-                <Divider />
-              </Link>
-         
-          <Button  className="nav-link resume"
-            margin="auto"
-            as={Link}
-            target="_blank"
-            variant="outline"
-            color="#f8572f"
-            border="1px"
-            borderRadius="10px"
-            href="/Abid_Resume.pdf"
-            download={true}
-            onClick={handleClick}
-            id="resume-button-1"
+          {/* Logo */}
+          <Box className="nav-logo">
+            <Heading
+              as="h1"
+              size="lg"
+              fontWeight="700"
+              cursor="pointer"
+              color={isDarkMode ? "#f1f5f9" : "#0f172a"}
+              display="flex"
+              alignItems="center"
+              gap="8px"
+            >
+              Dibakar
+              <Box as="span" color="#7c3aed">
+                Debnath
+              </Box>
+            </Heading>
+          </Box>
+
+          <Spacer />
+
+          {/* Desktop Navigation */}
+          <HStack
+            as="ul"
+            spacing={0}
+            display={["none", "none", "none", "flex", "flex"]}
+            listStyleType="none"
+            className="nav-links-desktop"
           >
-            <DownloadIcon marginRight="5px" />
-            Resume
-          </Button>
-        </VStack>
+            {navLinks.map((link) => (
+              <Box
+                as="li"
+                key={link.to}
+                className="nav-link-item"
+                position="relative"
+              >
+                <Link
+                  as={ScrollLink}
+                  to={link.to}
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={400}
+                  className="nav-link"
+                  px="16px"
+                  py="8px"
+                  color={isDarkMode ? "#cbd5e1" : "#475569"}
+                  fontSize="0.95rem"
+                  fontWeight="500"
+                  _hover={{
+                    color: "#7c3aed",
+                    transition: "color 0.3s ease",
+                  }}
+                  _activeLink={{
+                    color: "#7c3aed",
+                    fontWeight: "600",
+                  }}
+                  position="relative"
+                  display="inline-block"
+                >
+                  {link.label}
+                  <Box
+                    className="nav-link-underline"
+                    position="absolute"
+                    bottom="-4px"
+                    left="50%"
+                    width="0"
+                    height="2px"
+                    bg="#7c3aed"
+                    transition="all 0.3s ease"
+                    transform="translateX(-50%)"
+                  />
+                </Link>
+              </Box>
+            ))}
+          </HStack>
+
+          {/* Action Buttons */}
+          <HStack spacing={3} ml={8} display={["none", "none", "none", "flex"]}>
+            <IconButton
+              icon={isDarkMode ? <SunIcon /> : <MoonIcon />}
+              onClick={toggleDarkMode}
+              variant="ghost"
+              color={isDarkMode ? "#f1f5f9" : "#0f172a"}
+              _hover={{
+                bg: isDarkMode ? "rgba(124, 58, 237, 0.1)" : "rgba(124, 58, 237, 0.1)",
+              }}
+              aria-label="Toggle dark mode"
+              borderRadius="8px"
+            />
+            <Button
+              size="sm"
+              className="btn-resume"
+              onClick={handleResumeDownload}
+              bg="#7c3aed"
+              color="white"
+              _hover={{ bg: "#6d28d9", transform: "translateY(-2px)" }}
+              fontWeight="600"
+              borderRadius="8px"
+              transition="all 0.3s ease"
+            >
+              Resume
+            </Button>
+          </HStack>
+
+          {/* Mobile Menu Button */}
+          <HStack spacing={2} display={["flex", "flex", "flex", "none"]}>
+            <IconButton
+              icon={isDarkMode ? <SunIcon /> : <MoonIcon />}
+              onClick={toggleDarkMode}
+              variant="ghost"
+              color={isDarkMode ? "#f1f5f9" : "#0f172a"}
+              _hover={{
+                bg: isDarkMode ? "rgba(124, 58, 237, 0.1)" : "rgba(124, 58, 237, 0.1)",
+              }}
+              aria-label="Toggle dark mode"
+              borderRadius="8px"
+            />
+            <IconButton
+              icon={<HamburgerIcon />}
+              onClick={onOpen}
+              variant="ghost"
+              color={isDarkMode ? "#f1f5f9" : "#0f172a"}
+              _hover={{
+                bg: isDarkMode ? "rgba(148, 163, 184, 0.1)" : "rgba(0, 0, 0, 0.08)",
+              }}
+              aria-label="Open menu"
+              borderRadius="8px"
+            />
+          </HStack>
+        </Container>
       </Box>
-    </Container>
-  )
-}
+
+      {/* Mobile Drawer */}
+      <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
+        <DrawerOverlay />
+        <DrawerContent
+          bg={isDarkMode ? "#1e293b" : "#ffffff"}
+          color={isDarkMode ? "#f1f5f9" : "#0f172a"}
+        >
+          <DrawerCloseButton
+            color={isDarkMode ? "#f1f5f9" : "#0f172a"}
+            mt="4"
+          />
+          <DrawerBody pt={12}>
+            <VStack spacing={6} align="stretch">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.to}
+                  as={ScrollLink}
+                  to={link.to}
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={400}
+                  onClick={onClose}
+                  fontSize="lg"
+                  fontWeight="500"
+                  color={isDarkMode ? "#cbd5e1" : "#475569"}
+                  _hover={{ color: "#7c3aed" }}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <Button
+                w="full"
+                className="btn-resume"
+                onClick={() => {
+                  handleResumeDownload();
+                  onClose();
+                }}
+                bg="#7c3aed"
+                color="white"
+                _hover={{ bg: "#6d28d9" }}
+                fontWeight="600"
+                borderRadius="8px"
+                mt={4}
+              >
+                Download Resume
+              </Button>
+            </VStack>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
+    </>
+  );
+};
 
 

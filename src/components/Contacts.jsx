@@ -10,9 +10,9 @@ export const Contacts = () => {
      data-aos-duration="1000">Contact Me</h2>
       <div style={styles.contactDetails}>
         <p style={styles.contactInfo} id="contact-phone"   data-aos="fade-up"
-     data-aos-duration="1000"><i class="fa-solid fa-phone-volume fa-2xl"></i> <span style={{color:"black"}}> : {phoneNumber}</span> </p>
+     data-aos-duration="1000"><i class="fa-solid fa-phone-volume fa-2xl"></i> <span style={{color:"var(--text-light-primary, #0f172a)"}}> : {phoneNumber}</span> </p>
         <p style={styles.contactInfo} id="contact-email"  data-aos="fade-up"
-     data-aos-duration="1000" ><i class="fa-solid fa-envelope fa-2xl"></i>  <span style={{color:"black"}}> : {email}</span> </p>
+     data-aos-duration="1000" ><i class="fa-solid fa-envelope fa-2xl"></i>  <span style={{color:"var(--text-light-primary, #0f172a)"}}> : {email}</span> </p>
       </div>
       <div style={styles.socialMedia}>
         <p style={styles.socialMediaText}  data-aos="fade-up"
@@ -25,7 +25,7 @@ export const Contacts = () => {
         </div>
       </div>
       <div> <p style={{fontWeight:"700"}}  
-    >Designed <span style={{color:"orangered"}}>  &</span> develop by <span style={{color:"orangered"}}> Dibakar Debnath <span style={{color:"green"}}> ©</span>  </span> 2023</p> </div>
+    >Designed <span style={{color:"#7c3aed"}}>  &</span> develop by <span style={{color:"#7c3aed"}}> Dibakar Debnath <span style={{color:"green"}}> ©</span>  </span> 2023</p> </div>
     </div>
   );
 };
@@ -41,13 +41,13 @@ const styles = {
    
   },
   contactTitle: {
-    border: '4px solid orangered',
+    border: '4px solid #7c3aed',
     borderRadius: '10px',
     fontSize: '20px',
     fontWeight: 'bold',
     padding:"0px 80px",
-    fontFamily: 'Arial, sans-serif',
-    color: 'black',
+    fontFamily: 'var(--font-sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif)',
+    color: 'var(--text-light-primary, #0f172a)',
   },
   contactDetails: {
     display: 'flex',
@@ -58,13 +58,13 @@ const styles = {
   contactInfo: {
     fontWeight:"700",
     fontSize: '15px',
-    fontFamily: 'Arial, sans-serif',
-    color:'orangered',
+    fontFamily: 'var(--font-sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif)',
+    color:'var(--text-light-primary, #0f172a)',
     margin: '10px 0',
   },
   
   socialMedia: {
-  border:"4px solid orangered",
+  border:"4px solid #7c3aed",
  
     display: 'flex',
    borderRadius:"20px",
@@ -74,12 +74,12 @@ const styles = {
     marginBottom:"40px"
   },
   socialMediaText: {
-    border: '2px solid orangered',
+    border: '2px solid #7c3aed',
     borderRadius: "10px",
     fontSize: '16px',
     fontWeight:"700",
-    fontFamily: 'Arial, sans-serif',
-    color: 'black',
+    fontFamily: 'var(--font-sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif)',
+    color: 'var(--text-light-primary, #0f172a)',
     padding:"7px 35px",
     margin: '10px 0',
   },
@@ -91,8 +91,8 @@ const styles = {
   },
   socialMediaLink: {
     fontSize: '20px',
-    fontFamily: 'Arial, sans-serif',
-    color: 'orangered',
+    fontFamily: 'var(--font-sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif)',
+    color: '#7c3aed',
     textDecoration: 'none',
     margin: '0 10px',
     cursor: 'pointer',

@@ -2,18 +2,21 @@
 import './App.css';
 import { Home } from './components/Home';
 import { Nav } from './components/Nav';
+import { DarkModeProvider } from './context/DarkModeContext';
 import "./App.css"
 
 
 
 function App() {
   return (
-    <div id='app-container'>
-        <Nav/>
-      <Home/>
-    
+    <DarkModeProvider>
+      <div id='app-container'>
+          <Nav/>
+        <Home/>
       
-    </div>
+        
+      </div>
+    </DarkModeProvider>
   );
 }
 

@@ -164,7 +164,7 @@
 }
 
 #frontend_skills div {
-    border: 3px solid orangered;
+    border: 3px solid #7c3aed;
     border-radius: 10px;
     transition: border .2s ease-in-out border-width .2s ease-in-out;
 }
@@ -203,7 +203,7 @@
 }
 
 .back_end_skills div {
-    border: 3px solid orangered;
+    border: 3px solid #7c3aed;
     border-radius: 10px;
     transition: border .2s ease-in-out border-width .2s ease-in-out;
 
@@ -244,7 +244,7 @@
 }
 
 .OtherSkills-inner div {
-    border: 5px solid orangered;
+    border: 5px solid #7c3aed;
     border-radius: 10px;
     transition: border .2s ease-in-out border-width .2s ease-in-out;
 }
@@ -270,10 +270,14 @@
 
 
 #skillName {
-    color: black;
+    color: #0f172a;
     font-weight: 700;
     font-size: large;
     margin-top: 10px;
+}
+
+[data-dark-mode="true"] #skillName {
+    color: #e9d5ff;
 }
 
 .tool {
@@ -282,10 +286,15 @@
 
 .skillNameTitle {
 
-    color: orangered;
+    color: #7c3aed;
     font-weight: 700;
     font-size: x-large;
     margin-top: 10px;
+}
+
+[data-dark-mode="true"] .skillNameTitle {
+    color: #a78bfa;
+    border-color: #a78bfa;
 }
 
 .tool {
@@ -322,7 +331,7 @@
 
 #card_soco:hover {
     transform: scale(1.1);
-    background-color: orangered;
+    background-color: #7c3aed;
 }
 
 .project_main {
@@ -351,7 +360,7 @@
 
 .calendar {
     margin-top: 50px;
-    border: 4px solid orangered;
+    border: 4px solid #7c3aed;
     border-radius: 10px;
     padding: 20px;
 }
@@ -375,7 +384,7 @@
 
 .stat-container div {
     /* width: 100%; */
-    border: 4px solid orangered;
+    border: 4px solid #7c3aed;
     border-radius: 10px;
 }
 
@@ -511,7 +520,7 @@
     }
 
     #frontend_skills div {
-        border: 3px solid orangered;
+        border: 3px solid #7c3aed;
         border-radius: 10px;
         width: 100px;
         height: 100px;
@@ -523,7 +532,7 @@
         padding: 10px 30px;
         text-align: center;
 
-        color: orangered;
+        color: #7c3aed;
     }
 
     .left_dup {
@@ -565,12 +574,12 @@
         margin: auto;
         padding: 10px 20px;
         text-align: center;
-        color: orangered;
+        color: #7c3aed;
 
     }
 
     .back_end_skills div {
-        border: 3px solid orangered;
+        border: 3px solid #7c3aed;
         width: 100px;
         border-radius: 10px;
         margin: auto;
@@ -599,7 +608,7 @@
     }
 
     .OtherSkills-inner div {
-        border: 3px solid orangered;
+        border: 3px solid #7c3aed;
         display: flex;
         width: 100px;
         margin: auto;
@@ -610,7 +619,7 @@
     #OtherSkills_container {
         margin-top: 40px;
         padding: 10px;
-        color: orangered;
+        color: #7c3aed;
     }
 
     #tool_skill_img {
@@ -671,7 +680,7 @@
 
     .stat-container div {
         width: 100%;
-        border: 1px solid orangered;
+        border: 1px solid #7c3aed;
     }
 
     .statthree {
@@ -793,7 +802,7 @@
         padding: 10px 30px;
         text-align: center;
 
-        color: orangered;
+        color: #7c3aed;
     }
 
     .left_dup {
@@ -805,7 +814,7 @@
     }
 
     #frontend_skills div {
-        border: 5px solid orangered;
+        border: 5px solid #7c3aed;
         border-radius: 10px;
         width: 70%;
         height: 100px;
@@ -849,7 +858,7 @@
         height: max-content;
         padding: 40px 10px;
 
-        color: orangered;
+        color: #7c3aed;
     }
 
 
@@ -873,7 +882,7 @@
 
 
     #skillName {
-        color: orangered;
+        color: #7c3aed;
         font-weight: 700;
         font-size: large;
         margin-top: 10px;
@@ -920,7 +929,7 @@
     #OtherSkills_container {
         margin-top: 50px;
         padding: 10px;
-        color: orangered;
+        color: #7c3aed;
     }
 
     /* project   part   */
@@ -962,7 +971,7 @@
     .stat-container div {
         width: 80%;
         margin: auto;
-        border: 1px solid orangered;
+        border: 1px solid #7c3aed;
     }
 
     .statthree {

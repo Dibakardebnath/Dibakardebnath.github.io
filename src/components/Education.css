@@ -1,0 +1,124 @@
+/* ==================== EDUCATION SECTION STYLES ==================== */
+
+.education-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: var(--bg-light);
+}
+
+.education-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #7c3aed 0%, #a78bfa 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.education-card:hover {
+  border-color: #7c3aed;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.15);
+}
+
+.education-card:hover::before {
+  opacity: 1;
+}
+
+[data-dark-mode="true"] .education-card {
+  background-color: #0f172a;
+}
+
+[data-dark-mode="true"] .education-card:hover {
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.15);
+}
+
+/* Icon styling */
+.education-icon {
+  min-width: 80px;
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: rgba(124, 58, 237, 0.08);
+  border: 2px solid rgba(124, 58, 237, 0.15);
+}
+
+.education-card:hover .education-icon {
+  background-color: #7c3aed;
+  color: white;
+  transform: rotate(12deg) scale(1.1);
+}
+
+[data-dark-mode="true"] .education-icon {
+  background-color: rgba(124, 58, 237, 0.1);
+  border-color: rgba(124, 58, 237, 0.2);
+}
+
+[data-dark-mode="true"] .education-card:hover .education-icon {
+  background-color: #7c3aed;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.education-card {
+  animation: slideIn 0.6s ease-out;
+}
+
+/* Staggered animation */
+.education-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.education-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.education-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .education-card {
+    padding: 24px;
+  }
+
+  .education-icon {
+    min-width: 60px;
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .education-card {
+    padding: 20px;
+  }
+
+  .education-icon {
+    min-width: 50px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.75rem;
+  }
+}

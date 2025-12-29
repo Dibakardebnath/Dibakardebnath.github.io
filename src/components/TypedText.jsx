@@ -6,7 +6,7 @@ import Typed from 'typed.js';
   
     useEffect(() => {
       const typed = new Typed(typedElementRef.current, {
-        strings: ['Frontend Developer', 'Backend Developer', 'Student At Masai'],
+        strings: ['Frontend Developer', 'Backend Developer', 'Full Stack Developer'],
         typeSpeed: 100,
         backSpeed: 100,
         backDelay: 1000,
@@ -18,6 +18,6 @@ import Typed from 'typed.js';
       };
     }, []);
   
-    return <span style={{color:'orangered'}}  className="role" ref={typedElementRef} />;
+    return <span style={{color:'#7c3aed'}}  className="role" ref={typedElementRef} />;
   };
   

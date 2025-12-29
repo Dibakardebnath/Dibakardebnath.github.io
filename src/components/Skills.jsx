@@ -84,8 +84,6 @@ export const Skills = () => {
       <Box id='OtherSkills_container' class="skills-card" mt={"10px"}>
         <Text  className='tool' data-aos-duration="1000" textAlign={"center"}  m={"auto"} color={isDarkMode ? "#f1f5f9" : "#0f172a"} borderRadius={"10px"} border={"4px solid #7c3aed"} w={"max-content"}  fontWeight={"700"}>Tools</Text>
         <Box className='OtherSkills-inner' >
-
-
           <Box data-aos="flip-left" data-aos-duration="1500"><img className='skills-card-img' id='tool_skill_img' src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="" /> <Text   className="skills-card-name"    id='skillName'>Git</Text> </Box>
           <Box data-aos="flip-right" data-aos-duration="1500"><img className='skills-card-img' id='tool_skill_img' src="https://img.icons8.com/?size=1x&id=LoL4bFzqmAa0&format=png" alt="" /> <Text   className="skills-card-name"    id='skillName'>Github</Text> </Box>
           <Box data-aos="flip-left" data-aos-duration="1500"><img className='skills-card-img' id='tool_skill_img' src="https://res.cloudinary.com/postman/image/upload/t_team_logo/v1629869194/team/2893aede23f01bfcbd2319326bc96a6ed0524eba759745ed6d73405a3a8b67a8" alt="" /> <Text   className="skills-card-name"    id='skillName'>Postman</Text> </Box>
@@ -97,7 +95,6 @@ export const Skills = () => {
           <Box data-aos="flip-left" data-aos-duration="1500"><img className='skills-card-img' id='tool_skill_img' src="https://avatars.githubusercontent.com/u/7254995?s=200&v=4" alt="" /> <Text   className="skills-card-name"    id='skillName'>TanStack</Text> </Box>
           <Box data-aos="flip-right" data-aos-duration="1500"><img className='skills-card-img' id='tool_skill_img' src="https://avatars.githubusercontent.com/u/4316019?s=200&v=4" alt="" /> <Text   className="skills-card-name"    id='skillName'>Sentry</Text> </Box>
         </Box>
-
       </Box>
     </Box>
   )
